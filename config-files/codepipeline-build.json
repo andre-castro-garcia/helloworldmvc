@@ -1,0 +1,28 @@
+{
+  "category": "Build",
+  "version": "1",
+  "provider": "Compilar-Maven-Jenkins",
+  "settings": {
+      "entityUrlTemplate": "http://<public-dns>:8080/job/{Config:ProjectName}/",
+      "executionUrlTemplate": "http://<public-dns>:8080/job/{Config:ProjectName}/lastSuccessfulBuild/{ExternalExecutionId}/"
+  },
+  "configurationProperties": [
+      {
+          "name": "ProjectName",
+          "required": true,
+          "key": true,
+          "secret": false,
+		  "description": "The name of the build project must be provided when this action is added to the pipeline.",
+          "queryable": true,
+          "type": "String"
+      }
+  ],
+  "inputArtifactDetails": {
+      "maximumCount": 1,
+      "minimumCount": 0
+  },
+  "outputArtifactDetails": {
+      "maximumCount": 1,
+      "minimumCount": 0
+  }
+}
